@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <Border Grid.Row="0" Margin="2" BorderThickness="1" BorderBrush="#FF3E3A3A">
-
+            <TextBlock x:Name="TextBlock1" Text="1234556"></TextBlock>
         </Border>
 
         <Border Grid.Row="1" Margin="2" BorderThickness="1" BorderBrush="#FF3E3A3A">
@@ -28,21 +28,21 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="0" Margin="2" BorderThickness="1" BorderBrush="#FF3E3A3A">
-                    <TreeView Margin="1">
-                        <TreeViewItem Header="多边形平板" Margin="5">
-                            <TreeViewItem Header="3边形" Margin="2" />
-                            <TreeViewItem Header="4边形" Margin="2" />
-                            <TreeViewItem Header="5边形" Margin="2" />
+                    <TreeView  x:Name="TreeView1" Margin="1" TreeViewItem.Selected="treeView1_Selected" >
+                        <TreeViewItem Name="TreeViewItem_A" Header="多边形平板" Margin="5" IsExpanded="True">
+                            <TreeViewItem Name="TreeViewItem_A_001" Header="3边形" Margin="2" />
+                            <TreeViewItem Name="TreeViewItem_A_002" Header="4边形" Margin="2" />
+                            <TreeViewItem Name="TreeViewItem_A_003" Header="5边形" Margin="2" />
                         </TreeViewItem>
 
-                        <TreeViewItem Header="转角平板" Margin="5">
-                            <TreeViewItem Header="转角平板A" Margin="2" />
-                            <TreeViewItem Header="转角平板B" Margin="2" />
+                        <TreeViewItem Name="TreeViewItem_B" Header="转角平板" Margin="5" IsExpanded="True">
+                            <TreeViewItem Name="TreeViewItem_B_001" Header="转角平板A" Margin="2" />
+                            <TreeViewItem Name="TreeViewItem_B_002" Header="转角平板B" Margin="2" />
                         </TreeViewItem>
 
-                        <TreeViewItem Header="双曲铝板" Margin="5" IsExpanded="True">
-                            <TreeViewItem Header="双曲铝板A" Margin="2" />
-                            <TreeViewItem Header="双曲铝板B" Margin="2" />
+                        <TreeViewItem Name="TreeViewItem_C" Header="双曲铝板" Margin="5" IsExpanded="True">
+                            <TreeViewItem Name="TreeViewItem_C_001" Header="双曲铝板A" Margin="2" />
+                            <TreeViewItem Name="TreeViewItem_C_002" Header="双曲铝板B" Margin="2" />
                         </TreeViewItem>
 
                     </TreeView>
@@ -53,9 +53,12 @@
 
                         <!--Project Table-->
                         <TabItem Name="TabItemProjectTable" Header="Project Table"  >
-                            <WrapPanel Name="ImageWrapPanel" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Top">
-
-                            </WrapPanel>
+                            <ScrollViewer x:Name="ScrollViewer1">
+                                <WrapPanel Name="ImageWrapPanel" Margin="5" >
+                                    <Image x:Name="TreeViewItem_A_001_jpg" Margin="20" Stretch="None" Source="ImageForWrapPanel/TreeViewItem_A_001.png"  />
+                                    <Image x:Name="TreeViewItem_A_002_jpg" Margin="20" Stretch="None" Source="ImageForWrapPanel/TreeViewItem_A_002.png"  />
+                                </WrapPanel>
+                            </ScrollViewer>
                         </TabItem>
                         <!--Project Table-->
 
