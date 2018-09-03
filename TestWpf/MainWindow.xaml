@@ -1,0 +1,85 @@
+﻿<Window x:Class="TestWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Margin="2" BorderThickness="1" BorderBrush="#FF3E3A3A">
+
+        </Border>
+
+        <Border Grid.Row="1" Margin="2" BorderThickness="1" BorderBrush="#FF3E3A3A">
+
+        </Border>
+
+        <Border Grid.Row="2" Margin="2" BorderThickness="1" BorderBrush="#FF3E3A3A">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Margin="2" BorderThickness="1" BorderBrush="#FF3E3A3A">
+                    <TreeView Margin="1">
+                        <TreeViewItem Header="多边形平板" Margin="5">
+                            <TreeViewItem Header="3边形" Margin="2" />
+                            <TreeViewItem Header="4边形" Margin="2" />
+                            <TreeViewItem Header="5边形" Margin="2" />
+                        </TreeViewItem>
+
+                        <TreeViewItem Header="转角平板" Margin="5">
+                            <TreeViewItem Header="转角平板A" Margin="2" />
+                            <TreeViewItem Header="转角平板B" Margin="2" />
+                        </TreeViewItem>
+
+                        <TreeViewItem Header="双曲铝板" Margin="5" IsExpanded="True">
+                            <TreeViewItem Header="双曲铝板A" Margin="2" />
+                            <TreeViewItem Header="双曲铝板B" Margin="2" />
+                        </TreeViewItem>
+
+                    </TreeView>
+                </Border>
+
+                <Border Grid.Column="1" Margin="2" BorderThickness="1" BorderBrush="#FF3E3A3A">
+                    <TabControl x:Name="TabControl1" Margin="1" TabStripPlacement="Top"  Padding="10" FontSize="12">
+
+                        <!--Project Table-->
+                        <TabItem Name="TabItemProjectTable" Header="Project Table"  >
+                            <WrapPanel Name="ImageWrapPanel" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                            </WrapPanel>
+                        </TabItem>
+                        <!--Project Table-->
+
+                        <!--Parameter Info-->
+                        <TabItem Name="TabItemParameterInfo" Header="Parameter Info">
+                            <Border>
+                                <Frame x:Name="FrameParameterInfo" x:FieldModifier="public" NavigationUIVisibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"></Frame>
+                            </Border>
+                        </TabItem>
+                        <!--Parameter Info-->
+
+                        <!--Parameter Output-->
+                        <TabItem Name="TabItemParameterOutput" Header="Parameter Output">
+                            <Border>
+                                <Frame x:Name="FrameParameterOutput" x:FieldModifier="public" NavigationUIVisibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"></Frame>
+                            </Border>
+                        </TabItem>
+                        <!--Parameter Output-->
+
+                    </TabControl>
+
+                </Border>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

@@ -1,0 +1,59 @@
+﻿<Page x:Class="TestWpf.Pages.Page001_ParamererInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestWpf.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="500"
+      Title="Page001_ParamererInfo">
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--参数grid表信息-->
+            <Border Grid.Row="0" Margin="1" BorderThickness="1" BorderBrush="DarkOliveGreen">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <!--右参数-->
+                    <Border Grid.Column="0" Margin="2" BorderThickness="1" BorderBrush="#FFA4A3A0">
+                        <StackPanel>
+                            <Expander Header="参数宽度" Margin="3" Padding="1" ExpandDirection="Right" HorizontalContentAlignment="Stretch" IsHitTestVisible="True" IsExpanded="True" VerticalContentAlignment="Center" VerticalAlignment="Center"  >
+                                <TextBox Name="TextBox1"></TextBox>
+                            </Expander>
+                            <Expander Header="参数长度" Margin="3" Padding="1" ExpandDirection="Right" HorizontalContentAlignment="Stretch" IsHitTestVisible="True" IsExpanded="True" VerticalContentAlignment="Center" VerticalAlignment="Center"  >
+                                <TextBox Name="TextBox2"></TextBox>
+                            </Expander>
+                            <Expander Header="参数高度" Margin="3" Padding="1" ExpandDirection="Right" HorizontalContentAlignment="Stretch" IsHitTestVisible="True" IsExpanded="True" VerticalContentAlignment="Center" VerticalAlignment="Center"  >
+                                <TextBox Name="TextBox3"></TextBox>
+                            </Expander>
+                        </StackPanel>
+                    </Border>
+                    <!--右参数-->
+
+                    <!--左DataGrid-->
+                    <Border Grid.Column="1" Margin="2" BorderThickness="1" BorderBrush="#FFA4A3A0">
+                        <DataGrid x:Name="DataGrid1"></DataGrid>
+                    </Border>
+                    <!--左DataGrid-->
+                </Grid>
+            </Border>
+            <!--参数grid表信息-->
+
+            <!--图片详细信息-->
+            <Border Grid.Row="1" Margin="1" BorderThickness="1" BorderBrush="DarkOliveGreen">
+                <Image></Image>
+            </Border>
+            <!--图片详细信息-->
+
+        </Grid>
+    </Grid>
+</Page>
