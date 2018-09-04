@@ -3,9 +3,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TestWpf"
+        xmlns:local="clr-namespace:TestWpf"      
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
+
+    <Window.Resources>
+
+        <!--这个就是listview的模版-->
+        <local:TileView x:Key="ImageDetailView" SelectedBackground="LightSteelBlue">
+            <local:TileView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="Col2"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Margin="5"  Width="100" Source="{Binding}"></Image>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock FontWeight="Bold" Text="{Binding Path=ModelName}"></TextBlock>
+                            <TextBlock Text="{Binding Path=ModelNumber}"></TextBlock>
+                            <TextBlock Text="{Binding Path=UnitCost, StringFormat={}{0:C}}"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </local:TileView.ItemTemplate>
+        </local:TileView>
+        <!--这个就是listview的模版-->
+
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
@@ -28,24 +55,31 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="0" Margin="2" BorderThickness="1" BorderBrush="#FF3E3A3A">
-                    <TreeView  x:Name="TreeView1" Margin="1" TreeViewItem.Selected="treeView1_Selected" >
-                        <TreeViewItem Name="TreeViewItem_A" Header="多边形平板" Margin="5" IsExpanded="True">
-                            <TreeViewItem Name="TreeViewItem_A_001" Header="3边形" Margin="2" />
-                            <TreeViewItem Name="TreeViewItem_A_002" Header="4边形" Margin="2" />
-                            <TreeViewItem Name="TreeViewItem_A_003" Header="5边形" Margin="2" />
-                        </TreeViewItem>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TreeView Grid.Row="0" x:Name="TreeView1" Margin="2" TreeViewItem.Selected="treeView1_Selected" >
+                            <TreeViewItem Name="TreeViewItem_A" Header="多边形平板" Margin="5" IsExpanded="True">
+                                <TreeViewItem Name="TreeViewItem_A_001" Header="3边形" Margin="2" />
+                                <TreeViewItem Name="TreeViewItem_A_002" Header="4边形" Margin="2" />
+                                <TreeViewItem Name="TreeViewItem_A_003" Header="5边形" Margin="2" />
+                            </TreeViewItem>
 
-                        <TreeViewItem Name="TreeViewItem_B" Header="转角平板" Margin="5" IsExpanded="True">
-                            <TreeViewItem Name="TreeViewItem_B_001" Header="转角平板A" Margin="2" />
-                            <TreeViewItem Name="TreeViewItem_B_002" Header="转角平板B" Margin="2" />
-                        </TreeViewItem>
+                            <TreeViewItem Name="TreeViewItem_B" Header="转角平板" Margin="5" IsExpanded="True">
+                                <TreeViewItem Name="TreeViewItem_B_001" Header="转角平板A" Margin="2" />
+                                <TreeViewItem Name="TreeViewItem_B_002" Header="转角平板B" Margin="2" />
+                            </TreeViewItem>
 
-                        <TreeViewItem Name="TreeViewItem_C" Header="双曲铝板" Margin="5" IsExpanded="True">
-                            <TreeViewItem Name="TreeViewItem_C_001" Header="双曲铝板A" Margin="2" />
-                            <TreeViewItem Name="TreeViewItem_C_002" Header="双曲铝板B" Margin="2" />
-                        </TreeViewItem>
+                            <TreeViewItem Name="TreeViewItem_C" Header="双曲铝板" Margin="5" IsExpanded="True">
+                                <TreeViewItem Name="TreeViewItem_C_001" Header="双曲铝板A" Margin="2" />
+                                <TreeViewItem Name="TreeViewItem_C_002" Header="双曲铝板B" Margin="2" />
+                            </TreeViewItem>
 
-                    </TreeView>
+                        </TreeView>
+                        <TextBox x:Name="TextBox1" Grid.Row="1" Margin="2"></TextBox>
+                    </Grid>
                 </Border>
 
                 <Border Grid.Column="1" Margin="2" BorderThickness="1" BorderBrush="#FF3E3A3A">
@@ -53,12 +87,7 @@
 
                         <!--Project Table-->
                         <TabItem Name="TabItemProjectTable" Header="Project Table"  >
-                            <ScrollViewer x:Name="ScrollViewer1">
-                                <WrapPanel Name="ImageWrapPanel" Margin="5" >
-                                    <Image x:Name="TreeViewItem_A_001_jpg" Margin="20" Stretch="None" Source="ImageForWrapPanel/TreeViewItem_A_001.png"  />
-                                    <Image x:Name="TreeViewItem_A_002_jpg" Margin="20" Stretch="None" Source="ImageForWrapPanel/TreeViewItem_A_002.png"  />
-                                </WrapPanel>
-                            </ScrollViewer>
+                            <ListView x:Name="ListView1"  View="{StaticResource ImageDetailView}"> ></ListView>
                         </TabItem>
                         <!--Project Table-->
 
