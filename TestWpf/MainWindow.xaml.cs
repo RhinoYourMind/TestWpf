@@ -25,7 +25,7 @@ namespace TestWpf
 
         private void treeView1_Selected(object sender, RoutedEventArgs e)
         {
-           TextBlock1.Text= (e.OriginalSource as TreeViewItem).Name;
+           TextBlock1.Text= (e.OriginalSource as TreeViewItem).Header.ToString();
         }
     }
 }

@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClassFilesInteraction\TreeViewDataInstance.cs" />
     <Compile Include="TileView.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -111,6 +112,9 @@
   <ItemGroup>
     <Resource Include="ImageForWrapPanel\TreeViewItem_A_001.png" />
     <Resource Include="ImageForWrapPanel\TreeViewItem_A_002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XmlFiles\TreeViewItemsData.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

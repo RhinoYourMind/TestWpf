@@ -60,8 +60,9 @@
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="30"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TreeView Grid.Row="0" x:Name="TreeView1" Margin="2" TreeViewItem.Selected="treeView1_Selected" >
-                            <TreeViewItem Name="TreeViewItem_A" Header="多边形平板" Margin="5" IsExpanded="True">
+                        <TreeView x:Name="TreeView1" Grid.Row="0" Margin="2" TreeViewItem.Selected="treeView1_Selected"  >
+                            
+                            <TreeViewItem Name="TreeViewItem_A" Header="多边形平板" Margin="5" IsExpanded="True" >
                                 <TreeViewItem Name="TreeViewItem_A_001" Header="3边形" Margin="2" />
                                 <TreeViewItem Name="TreeViewItem_A_002" Header="4边形" Margin="2" />
                                 <TreeViewItem Name="TreeViewItem_A_003" Header="5边形" Margin="2" />
@@ -87,7 +88,7 @@
 
                         <!--Project Table-->
                         <TabItem Name="TabItemProjectTable" Header="Project Table"  >
-                            <ListView x:Name="ListView1"  View="{StaticResource ImageDetailView}"> ></ListView>
+                            <ListView x:Name="ListView1"  View="{StaticResource ImageDetailView}">></ListView>
                         </TabItem>
                         <!--Project Table-->
 
